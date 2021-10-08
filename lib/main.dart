@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:smocabulary/service_locator.dart';
 
 import 'core/data/config.dart';
@@ -14,7 +15,9 @@ void main() async {
   await configureDependencies({
     DeviceSegment.currentDevice.name,
   });
-  Level envLevel = Logger.levelByName[Config.I.get('log.level') ?? 'debug']!;
+  await getIt.allReady();
+  Config cfg = GetIt.I<Config>();
+  Level envLevel = Logger.levelByName[cfg.get('log.level') ?? 'debug']!;
   Logger.I.level = envLevel;
   Logger.I.i('Hallo Welt!');
 
