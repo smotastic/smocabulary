@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:smocabulary/core/presentation/themes.dart';
 import 'package:smocabulary/features/courselist/presentation/pages/courselist_page.dart';
 
 import 'sample_feature/sample_item_details_view.dart';
@@ -57,8 +58,8 @@ class MyApp extends StatelessWidget {
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
-          theme: ThemeData(),
-          darkTheme: ThemeData.dark(),
+          theme: AppTheme.fromType(ThemeType.defaultLight).themeData,
+          darkTheme: AppTheme.fromType(ThemeType.defaultDark).themeData,
           themeMode: settingsController.themeMode,
 
           // Define a function to handle named routes in order to support

@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'color_utils.dart';
 
 enum ThemeType {
-  Pokemon,
-  Pokemon_Dark,
+  defaultLight,
+  defaultDark,
 }
 
 class AppTheme {
-  static ThemeType defaultTheme = ThemeType.Pokemon;
+  static ThemeType defaultTheme = ThemeType.defaultLight;
 
   bool isDark;
   Color bg1; //
@@ -51,44 +51,44 @@ class AppTheme {
   /// fromType factory constructor
   factory AppTheme.fromType(ThemeType t) {
     switch (t) {
-      case ThemeType.Pokemon:
+      case ThemeType.defaultLight:
         return AppTheme(
           isDark: false,
           txt: Colors.black,
           accentTxt: Colors.white,
-          bg1: Color(0xfff1f7f0),
-          bg2: Color(0xffc1dcbc),
+          bg1: const Color(0xfff1f7f0),
+          bg2: const Color(0xffc1dcbc),
           surface: Colors.white,
-          accent1: Color(0xffff90ff),
-          accent1Dark: Color(0xff00856f),
-          accent1Darker: Color(0xff006b5a),
-          accent2: Color(0xaaf09433),
-          accent3: Color(0xff5bc91a),
-          greyWeak: Color(0xff909f9c),
-          grey: Color(0xff515d5a),
-          greyStrong: Color(0xff151918),
+          accent1: const Color(0xffff90ff),
+          accent1Dark: const Color(0xff00856f),
+          accent1Darker: const Color(0xff006b5a),
+          accent2: const Color(0xaaf09433),
+          accent3: const Color(0xff5bc91a),
+          greyWeak: const Color(0xff909f9c),
+          grey: const Color(0xff515d5a),
+          greyStrong: const Color(0xff151918),
           error: Colors.red.shade900,
-          focus: Color(0xFF0ee2b1),
+          focus: const Color(0xFF0ee2b1),
         );
 
-      case ThemeType.Pokemon_Dark:
+      case ThemeType.defaultDark:
         return AppTheme(
           isDark: true,
           txt: Colors.white,
           accentTxt: Colors.black,
-          bg1: Color(0xff121212),
-          bg2: Color(0xff2c2c2c),
-          surface: Color(0xff252525),
-          accent1: Color(0xff00a086),
-          accent1Dark: Color(0xff00caa5),
-          accent1Darker: Color(0xff00caa5),
-          accent2: Color(0xfff09433),
-          accent3: Color(0xff5BC91A),
-          greyWeak: Color(0xffa8b3b0),
-          grey: Color(0xffced4d3),
-          greyStrong: Color(0xffffffff),
-          error: Color(0xffe55642),
-          focus: Color(0xff0ee2b1),
+          bg1: const Color(0xff121212),
+          bg2: const Color(0xff2c2c2c),
+          surface: const Color(0xff252525),
+          accent1: const Color(0xff00a086),
+          accent1Dark: const Color(0xff00caa5),
+          accent1Darker: const Color(0xff00caa5),
+          accent2: const Color(0xfff09433),
+          accent3: const Color(0xff5BC91A),
+          greyWeak: const Color(0xffa8b3b0),
+          grey: const Color(0xffced4d3),
+          greyStrong: const Color(0xffffffff),
+          error: const Color(0xffe55642),
+          focus: const Color(0xff0ee2b1),
         );
     }
   }
@@ -113,7 +113,6 @@ class AppTheme {
     );
     return t.copyWith(
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        buttonColor: accent1,
         highlightColor: accent1,
         toggleableActiveColor: accent1);
   }
