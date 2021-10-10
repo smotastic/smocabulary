@@ -6,18 +6,18 @@ class DeviceSegment {
   static const mobile = 'mobile';
   static const web = 'web';
 
-  static const DeviceSegment mobileDevice = const DeviceSegment(mobile);
-  static const DeviceSegment webDevice = const DeviceSegment(web);
+  static const DeviceSegment mobileDevice = DeviceSegment(mobile);
+  static const DeviceSegment webDevice = DeviceSegment(web);
 
   final String name;
   const DeviceSegment(this.name);
 
   bool isWeb() {
-    return this.name == web;
+    return name == web;
   }
 
   bool isMobile() {
-    return this.name == mobile;
+    return name == mobile;
   }
 
   static DeviceSegment get currentDevice {

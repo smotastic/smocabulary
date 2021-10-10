@@ -8,7 +8,7 @@ class CourseListLoadingState extends CourseListState {
 }
 
 class CourseListLoadedState extends CourseListState {
-  final List<String> courses;
+  final List<CourseListEntry> courses;
 
   CourseListLoadedState(this.courses);
 
