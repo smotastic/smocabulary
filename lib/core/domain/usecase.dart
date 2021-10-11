@@ -1,12 +1,10 @@
-import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-
-import 'failure.dart';
+import 'package:smocabulary/core/domain/result.dart';
 
 abstract class UseCase<T, P extends Params> {
   @nonVirtual
-  Future<Either<Failure, T>> call(P params) async {
+  Future<Result<T>> call(P params) async {
     // try {
     return await execute(params);
     // } catch (e) {
@@ -16,7 +14,7 @@ abstract class UseCase<T, P extends Params> {
     // }
   }
 
-  Future<Either<Failure, T>> execute(P params);
+  Future<Result<T>> execute(P params);
 }
 
 class NoParams extends Params {

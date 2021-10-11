@@ -5,6 +5,8 @@ import 'package:smocabulary/service_locator.dart';
 
 import '../db_helper.dart';
 
+part 'hive_helper.g.dart';
+
 @LazySingleton()
 @hive
 class HiveHelper extends DbHelper<HiveInterface> {
@@ -18,7 +20,17 @@ class HiveHelper extends DbHelper<HiveInterface> {
   Future<HiveInterface> constructDb() async {
     await Hive.initFlutter();
     _db = Hive;
-    // _db!.registerAdapter(...Adapter());
+    _db!.registerAdapter(HiveCourseAdapter());
     return _db!;
   }
+}
+
+@HiveType(typeId: 1)
+class HiveCourse {
+  @HiveField(0)
+  final num id;
+  @HiveField(1)
+  final String name;
+
+  HiveCourse(this.id, this.name);
 }

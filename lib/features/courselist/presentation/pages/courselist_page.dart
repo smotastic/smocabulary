@@ -25,7 +25,7 @@ class CourseListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Courselist'),
+        title: const Text('Bibliothek'),
       ),
       body: BlocBuilder<CourseListCubit, CourseListState>(
           builder: (context, state) {
