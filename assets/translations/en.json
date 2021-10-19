@@ -1,0 +1,10 @@
+{
+    "app": {
+        "title": "Smocabulary"
+    },
+    "feature": {
+        "courselist": {
+            "page_title": "Library"
+        }
+    }
+}

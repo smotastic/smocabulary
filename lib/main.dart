@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:smocabulary/service_locator.dart';
@@ -27,7 +28,19 @@ void main() async {
   // Load the user's preferred theme while the splash screen is displayed.
   // This prevents a sudden theme change when the app is first displayed.
   await settingsController.loadSettings();
-  runApp(MyApp(
-    settingsController: settingsController,
-  ));
+
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [
+          Locale('en'),
+          Locale('de'),
+        ],
+        path: 'assets/translations',
+        fallbackLocale: const Locale('en'),
+        child: MyApp(
+          settingsController: settingsController,
+        )),
+  );
 }

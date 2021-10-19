@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:smocabulary/features/courselist/presentation/bloc/courselist_cubit.dart';
 import 'package:smocabulary/features/courselist/presentation/widgets/course_list_item.dart';
+import 'package:smocabulary/generated/locale_keys.g.dart';
 
 class CourseListPage extends StatelessWidget {
   const CourseListPage({Key? key}) : super(key: key);
@@ -11,7 +13,7 @@ class CourseListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => GetIt.I<CourseListCubit>()..init(),
-      child: CourseListView(),
+      child: const CourseListView(),
     );
   }
 }
@@ -25,7 +27,7 @@ class CourseListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bibliothek'),
+        title: const Text(LocaleKeys.feature_courselist_page_title).tr(),
       ),
       body: BlocBuilder<CourseListCubit, CourseListState>(
           builder: (context, state) {
