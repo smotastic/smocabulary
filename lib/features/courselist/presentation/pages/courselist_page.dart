@@ -37,8 +37,8 @@ class CourseListView extends StatelessWidget {
         if (state is CourseListLoadedState) {
           return GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              childAspectRatio: 10 / 2,
-              crossAxisCount: (MediaQuery.of(context).size.width ~/ 250),
+              childAspectRatio: 18 / 2,
+              crossAxisCount: (MediaQuery.of(context).size.width ~/ 450),
               mainAxisSpacing: 2,
             ),
             itemBuilder: (_, i) {
