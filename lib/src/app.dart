@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           onGenerateTitle: (BuildContext context) => LocaleKeys.app_title.tr(),
-
+          debugShowCheckedModeBanner: false,
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.

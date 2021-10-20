@@ -13,7 +13,8 @@ import 'core/data/datasources/remote/supabase/supabase_helper.dart' as _i8;
 import 'features/courselist/data/adapter/course_list_adapter.dart' as _i5;
 import 'features/courselist/domain/port/course_list_port.dart' as _i4;
 import 'features/courselist/domain/usecases/course_list_usecase.dart' as _i6;
-import 'features/courselist/presentation/bloc/courselist_cubit.dart' as _i9;
+import 'features/courselist/presentation/bloc/courselist_cubit.dart' as _i10;
+import 'features/courselist/presentation/bloc/viewtoggle_cubit.dart' as _i9;
 
 const String _hive = 'hive';
 // ignore_for_file: unnecessary_lambdas
@@ -30,7 +31,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       registerFor: {_hive});
   gh.lazySingletonAsync<_i8.SupabaseHelper>(
       () async => _i8.SupabaseHelper(await get.getAsync<_i3.Config>()));
-  gh.lazySingleton<_i9.CourseListCubit>(
-      () => _i9.CourseListCubit(get<_i6.CourseListUseCase>()));
+  gh.lazySingleton<_i9.ViewToggleCubit>(() => _i9.ViewToggleCubit());
+  gh.lazySingleton<_i10.CourseListCubit>(
+      () => _i10.CourseListCubit(get<_i6.CourseListUseCase>()));
   return get;
 }
