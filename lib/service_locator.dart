@@ -9,8 +9,6 @@ final getIt = GetIt.instance;
 const mobile = Environment(DeviceSegment.mobile);
 const web = Environment(DeviceSegment.web);
 
-const hive = Environment('hive');
-
 @InjectableInit(
   initializerName: r'$initGetIt', // default
   preferRelativeImports: true, // default

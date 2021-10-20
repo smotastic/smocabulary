@@ -23,6 +23,7 @@ dependencies:
   hive_flutter: ^1.1.0
   injectable: ^1.5.0
   logger: ^1.1.0
+  smartstruct: ^1.2.4+1
   supabase: ^0.2.7
 
 dev_dependencies:
@@ -33,6 +34,7 @@ dev_dependencies:
     sdk: flutter
   hive_generator: ^1.1.1
   injectable_generator: ^1.5.2
+  smartstruct_generator: ^1.2.4+1
 
 flutter:
   uses-material-design: true

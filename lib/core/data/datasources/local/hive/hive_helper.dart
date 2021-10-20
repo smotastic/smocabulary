@@ -1,14 +1,12 @@
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
-import 'package:smocabulary/service_locator.dart';
 
 import '../db_helper.dart';
 
 part 'hive_helper.g.dart';
 
 @LazySingleton()
-@hive
 class HiveHelper extends DbHelper<HiveInterface> {
   HiveInterface? _db;
 

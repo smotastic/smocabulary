@@ -4,7 +4,7 @@ import 'package:smocabulary/core/domain/result.dart';
 
 abstract class UseCase<T, P extends Params> {
   @nonVirtual
-  Future<Result<T>> call(P params) async {
+  FResult<T> call(P params) async {
     // try {
     return await execute(params);
     // } catch (e) {
@@ -14,7 +14,7 @@ abstract class UseCase<T, P extends Params> {
     // }
   }
 
-  Future<Result<T>> execute(P params);
+  FResult<T> execute(P params);
 }
 
 class NoParams extends Params {
