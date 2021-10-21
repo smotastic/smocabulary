@@ -17,7 +17,6 @@ class HiveCourseAdapter extends TypeAdapter<HiveCourse> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return HiveCourse(
-      fields[0] as num,
       fields[1] as String,
     );
   }
@@ -25,9 +24,7 @@ class HiveCourseAdapter extends TypeAdapter<HiveCourse> {
   @override
   void write(BinaryWriter writer, HiveCourse obj) {
     writer
-      ..writeByte(2)
-      ..writeByte(0)
-      ..write(obj.id)
+      ..writeByte(1)
       ..writeByte(1)
       ..write(obj.name);
   }

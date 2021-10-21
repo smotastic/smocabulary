@@ -11,7 +11,7 @@ class HiveCourseMapperImpl extends HiveCourseMapper {
 
   @override
   CourseListModel fromHiveCourse(HiveCourse source) {
-    final courselistmodel = CourseListModel(source.id, source.name);
+    final courselistmodel = CourseListModel(source.name);
     return courselistmodel;
   }
 }

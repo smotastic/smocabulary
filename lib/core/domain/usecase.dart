@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:smocabulary/core/domain/result.dart';
+import 'package:smocabulary/core/domain/domain.dart';
 
 abstract class UseCase<T, P extends Params> {
   @nonVirtual

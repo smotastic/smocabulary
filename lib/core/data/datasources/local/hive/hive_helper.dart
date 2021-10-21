@@ -25,10 +25,12 @@ class HiveHelper extends DbHelper<HiveInterface> {
 
 @HiveType(typeId: 1)
 class HiveCourse {
-  @HiveField(0)
-  final num id;
   @HiveField(1)
   final String name;
 
-  HiveCourse(this.id, this.name);
+  HiveCourse(this.name);
+}
+
+class HiveMeta {
+  static const courseBox = 'course';
 }

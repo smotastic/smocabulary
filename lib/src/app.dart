@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:smocabulary/core/presentation/themes.dart';
+import 'package:smocabulary/features/courseadd/presentation/pages/course_add_page.dart';
 import 'package:smocabulary/features/courselist/presentation/pages/courselist_page.dart';
 import 'package:smocabulary/generated/locale_keys.g.dart';
 import 'sample_feature/sample_item_details_view.dart';
@@ -62,6 +63,10 @@ class MyApp extends StatelessWidget {
                 }
               },
             );
+          },
+          routes: {
+            CourseListPage.courseListRoute: (ctxt) => const CourseListPage(),
+            CourseAddPage.courseAddRoute: (ctxt) => const CourseAddPage(),
           },
         );
       },
