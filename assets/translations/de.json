@@ -5,6 +5,9 @@
     "feature": {
         "courselist": {
             "page_title": "Bibliothek"
+        },
+        "courseadd": {
+            "page_title": "Kurs hinzufuegen"
         }
     }
 }

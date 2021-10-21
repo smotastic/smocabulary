@@ -4,7 +4,10 @@
     },
     "feature": {
         "courselist": {
-            "page_title": "Library"
+            "page_title": "Bibliothek"
+        },
+        "courseadd": {
+            "page_title": "Kurs hinzufuegen"
         }
     }
 }
