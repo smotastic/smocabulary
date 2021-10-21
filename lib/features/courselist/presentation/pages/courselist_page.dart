@@ -3,13 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:smocabulary/core/presentation/styles.dart';
+import 'package:smocabulary/features/courseadd/presentation/pages/course_add_page.dart';
 import 'package:smocabulary/features/courselist/presentation/bloc/courselist_cubit.dart';
 import 'package:smocabulary/features/courselist/presentation/bloc/viewtoggle_cubit.dart';
 import 'package:smocabulary/features/courselist/presentation/bloc/viewtoggle_state.dart';
+import 'package:smocabulary/features/courselist/presentation/bridge/course_add_bridge.dart';
 import 'package:smocabulary/features/courselist/presentation/widgets/course_list_item.dart';
 import 'package:smocabulary/generated/locale_keys.g.dart';
 
 class CourseListPage extends StatelessWidget {
+  static String courseListRoute = '/course';
+
   const CourseListPage({Key? key}) : super(key: key);
 
   @override
@@ -37,15 +41,25 @@ class CourseListView extends StatelessWidget {
           appBar: AppBar(
             actions: [
               Padding(
-                  padding: const EdgeInsets.all(Insets.small),
-                  child: GestureDetector(
-                    onTap: () {
-                      BlocProvider.of<ViewToggleCubit>(viewcontext).toggle();
-                    },
-                    child: Icon(viewstate is ListViewState
-                        ? Icons.grid_view
-                        : Icons.view_list),
-                  )),
+                padding: const EdgeInsets.all(Insets.small),
+                child: GestureDetector(
+                  onTap: () {
+                    BlocProvider.of<ViewToggleCubit>(viewcontext).toggle();
+                  },
+                  child: Icon(viewstate is ListViewState
+                      ? Icons.grid_view
+                      : Icons.view_list),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(Insets.small),
+                child: GestureDetector(
+                  onTap: () {
+                    GetIt.I<CourseAddBridge>().bridge(context);
+                  },
+                  child: const Icon(Icons.add),
+                ),
+              ),
             ],
             title: const Text(LocaleKeys.feature_courselist_page_title).tr(),
           ),
