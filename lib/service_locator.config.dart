@@ -35,7 +35,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
     {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   gh.singletonAsync<_i3.Config>(() => _i3.Config.create());
-  gh.lazySingleton<_i4.CourseAddBridge>(() => _i4.CourseAddBridge());
+  gh.lazySingleton<_i4.CourseListToAddBridge>(
+      () => _i4.CourseListToAddBridge());
   gh.lazySingleton<_i5.HiveHelper>(() => _i5.HiveHelper());
   gh.lazySingletonAsync<_i6.SupabaseHelper>(
       () async => _i6.SupabaseHelper(await get.getAsync<_i3.Config>()));

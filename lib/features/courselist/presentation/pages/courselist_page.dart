@@ -55,7 +55,7 @@ class CourseListView extends StatelessWidget {
                 padding: const EdgeInsets.all(Insets.small),
                 child: GestureDetector(
                   onTap: () {
-                    GetIt.I<CourseAddBridge>().bridge(context);
+                    GetIt.I<CourseListToAddBridge>().bridge(context);
                   },
                   child: const Icon(Icons.add),
                 ),
